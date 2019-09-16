@@ -143,18 +143,18 @@ Algunas de las desventajas del ORM son: \cite{Borja2010} \cite{Polo2013}
 \subsection {\textbf{Modelo de datos basado en objetos\\}} \cite{SilberschatzKorthSudarshan2006}
 El modelo de datos orientado a objetos se basa en el paradigma de los lenguajes de programación orientados a objetos, que actualmente se usa en gran medida. La herencia, la identidad de los objetos y la encapsulación , con métodos para ofrecer una interfaz para los objetos, están entre los conceptos principales de la programación orientada a objetos que han encontrado aplicación en el modelado de datos.
 
-El modelo orientado a objetos puede considerarse una extensión del modelo E-R con los conceptos de encapsulación, métodos (funciones) e identidad de los objetos. %%Falta referencia
+El modelo orientado a objetos puede considerarse una extensión del modelo E-R con los conceptos de encapsulación, métodos e identidad de los objetos.
 
 
 
 %% SEGUNDA SUBSECCION
 
-\subsection{\textbf{Bases de datos basadas en objetos}} \cite{SilberschatzKorthSudarshan2006}
+\subsection{\textbf{Bases de datos basadas en objetos}} 
 El primer obstáculo al que se enfrentan los programadores que usan el modelo relacional de datos es el limitado sistema de tipos soportado por el modelo relacional. El segundo obstáculo es la dificultad de acceso a los datos de la base de datos desde los programas escritos en lenguajes de programación como C++ o Java. La mera extensión del sistema de tipos soportado por las bases de datos no resulta suficiente para resolver completamente este problema.
 El término lenguajes de programación persistentes hace referencia a las extensiones de los lenguajes de programación existentes que añaden persistencia y otras características de las bases de datos usando el sistema de tipos nativo del lenguaje de programación. El término sistemas de bases de datos orientadas a objetos se usa para hacer referencia a los sistemas de bases de datos que soportan sistemas de tipos orientados a objetos y permiten el acceso directo a los datos desde los lenguajes de programación orientados a objetos usando el sistema de tipos nativo del lenguaje. 
+\cite{SilberschatzKorthSudarshan2006}
 
-
-\subsubsection{\textbf{Lenguaje de programación persistentes}} \cite{SilberschatzKorthSudarshan2006}
+\subsubsection{\textbf{Lenguaje de programación persistentes}} 
 Los lenguajes de las bases de datos se diferencian de los lenguajes de programación tradicionales en que trabajan directamente con datos que son persistentes; es decir, los datos siguen existiendo una vez que el programa que los creó haya concluido. Las relaciones de las bases de datos y las tuplas de las relaciones son ejemplos de datos persistentes.
 Los lenguajes de programación persistentes son lenguajes de programación extendidos con estructuras para el tratamiento de los datos persistentes. Los lenguajes de programación persistentes pueden distinguirse de los lenguajes con SQL incorporado, al menos, de dos maneras:
 
@@ -165,7 +165,8 @@ Los lenguajes de programación persistentes son lenguajes de programación exten
 \end{itemize}
 2. Los programadores que usan lenguajes de consultas incorporados son responsables de la escritura de código explícito para la búsqueda en la memoria de los datos de la base de datos. Si se realizan actualizaciones , los programadores deben escribir explicitamente código para volver a guardar los datos actualizados en la base de datos.
 
-\subsubsection{\textbf{Sistemas orientados a objetos y sistemas relacionales orientados a objetos}} \cite{SilberschatzKorthSudarshan2006}
+\cite{SilberschatzKorthSudarshan2006}
+\subsubsection{\textbf{Sistemas orientados a objetos y sistemas relacionales orientados a objetos}} 
 
 Los sistemas relacionales orientados a objetos se dirigen a simplificar la realización de los modelos de datos y de las consultas mediante el uso de tipos de datos complejos. Entre las aplicaciones habituales están el almacenamiento y la consulta de datos complejos, incluidos los datos multimedia.
 Los lenguajes declarativos como SQL, sin embargo, imponen una reducción significativa del rendimiento a ciertos tipos de aplicaciones que se ejecutan principalmente en la memoria principal y realizan gran número de accesos a la base de datos. Los lenguajes de programación persistentes se dirigen a las aplicaciones de este tipo que tienen necesidad de un rendimiento elevado. Proporcionan acceso a los datos persistentes con poca sobrecarga y eliminan la necesidad de traducir los datos si hay que tratarlos con un lenguaje de programación. Sin embargo, son más susceptibles de deteriorar los datos debido a los errores de programación y no suelen disponer de gran capacidad de consulta. Entre las aplicaciones habituales están las bases de datos de CAD.
