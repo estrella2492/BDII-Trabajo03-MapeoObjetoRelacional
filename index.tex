@@ -29,7 +29,8 @@
 
 		\begin{abstract}
 		
-
+Object Relational Mapping (also known as ORM or OR mapping) is a process that involves the transformation between object and relational models and between the systems that support these methodologies.
+In order to carry out this transformation it is necessary to have a broad knowledge of object-oriented and relational technologies, as well as their similarities and differences.
 
 		\end{abstract}
 
@@ -41,7 +42,8 @@
 
 \section{Resumen}
 
-
+El mapeo objeto/relacional (también conocido como ORM o OR mapping) es un proceso que consiste en la transformación entre modelos de objetos y relacional y entre los sistemas que soportan estas metodologías.
+Para poder realizar esta transformación es necesario tener un amplio conocimiento de las tecnologías orientada a objetos y relacional, así como también de sus similitudes y diferencias.
 
 %% ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -49,7 +51,7 @@
 %% INTRODUCION ----------------------------------------------------------------------------------------------------------------
 
 \section{Introducción} 
-Varias áreas de aplicaciones para los sistemas de bases de datos se hallan limitadas por las restricciones del modelo de datos relacional. El modelo relacional orientado a objetos combina caracteristicas del modelo relacional y del modelo orientado a objetos. Este modelo proporciona un sistema de tipos de datos variado. Aplica la herencia a las relaciones, no sólo a los tipos . El modelo de datos relacional orientado a objetos permite una migración fácil desde las bases de datos relacionales.
+Varias áreas de aplicaciones para los sistemas de bases de datos se hallan limitadas por las restricciones del modelo de datos relacional. El modelo relacional orientado a objetos combina caracteristicas del modelo relacional y del modelo orientado a objetos. Este modelo proporciona un sistema de tipos de datos variado. Aplica la herencia a las relaciones, no sólo a los tipos.\\El modelo de datos relacional orientado a objetos permite una migración fácil desde las bases de datos relacionales.
 El término base de datos orientada a objetos se utiliza para describir los sistemas de bases de datos que soportan el acceso directo a los datos desde lenguajes de programación orientados a objetos, sin necesidad de lenguajes de consultas relacionales como interfaz de las bases de datos.
 
 %% ----------------------------------------------------------------------------------------------------------------------------------
@@ -61,34 +63,95 @@ El término base de datos orientada a objetos se utiliza para describir los sist
 
 %% PRIMERA SUBSECCION 
 
-\subsection {\textbf{Modelo de datos basado en objetos}}
-El modelo de datos orientado a objetos se basa en el paradigma de los lenguajes de programación orientados a objetos, que actualmente se usa en gran medida. La herencia, la identidad de los objetos y la encapsulación , con métodos para ofrecer una interfaz para los objetos, están entre los conceptos principales de la programación orientada a objetos que han encontrado aplicación en el modelado de datos.
+\subsection {\textbf{Concepto del ORM}}
 
-El modelo orientado a objetos puede considerarse una extensión del modelo E-R con los conceptos de encapsulación, métodos (funciones) e identidad de los objetos.
+Bauer y King señalan que el mapeo Objeto/Relacional es “la persistencia automatizada y transparente de las tablas en una Base de Datos relacional, usando metadatos que definen el mapeo entre los objetos y la Base de Datos” \cite{BauerKing2005} 
 
-%%Ejemplo de cita
-\cite{Gartner} 
+Un ORM es un modelo de programación que permite mapear las estructuras de una base de datos relacional (SQL Server, Oracle, MySQL, etc.), en adelante RDBMS (Relational Database Management System), sobre una estructura lógica de entidades con el objeto de simplificar y acelerar el desarrollo de nuestras aplicaciones.\cite{Deloitte1} 
+
+% Las estructuras de la base de datos relacional quedan vinculadas con las entidades lógicas o base de datos virtual definida en el ORM, de tal modo que las acciones CRUD (Create, Read, Update, Delete) a ejecutar sobre la base de datos física se realizan de forma indirecta por medio del ORM.
+
+% La consecuencia más directa que se infiere del párrafo anterior es que, además de “mapear”, los ORMs tienden a “liberarnos” de la escritura o generación manual de código SQL (Structured Query Language) necesario para realizar las queries o consultas y gestionar la persistencia de datos en el RDBMS.
+
+% Así, los objetos o entidades de la base de datos virtual creada en nuestro ORM podrán ser manipulados por medio de algún lenguaje de nuestro interés según el tipo de ORM utilizado, por ejemplo, LINQ sobre Entity Framework de Microsoft. La interacción con el RDBMS quedará delegada en los métodos de actualización correspondientes proporcionados por el ORM. Los ORMs más completos ofrecen servicios para persistir todos los cambios en los estados de las entidades, previo seguimiento o tracking automático, sin escribir una sola línea de SQL. 
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[width=7.5cm]{./IMAGENES/ORM} 
+		\caption{Mapeo Objeto/Relacional}
+	\end{center}
+\end{figure}
+
+
+\subsection {\textbf{Ventajas y Desventajas del ORM\\}}
+
+
+\subsubsection{\textbf{Ventajas}}
+Algunas de las ventajas del ORM son: \cite{Borja2010} \cite{Polo2013} 
 
 \begin{itemize}
-	\item x
-	\item y
-	\item z
+
+	\item Rapidez de desarrollo 
+% ORM permite crear un modelo ajustado ya que leeautomáticamente el esquema de tablas y relaciones.
+	\item Abstracción de la base de datos 
+% Ayuda a que automáticamente las consultas que se realicen en la base de datos se conviertan de registros aobjetos y viceversa y de esta forma adaptarse a los proveedores: (MYSQL,ORACLE, POSTRESQL, ETC.).
+	\item Lenguaje propio para consultas a la base de datos
+% Las herramientas queofrece ORM para poder extraer los datos de la forma que se necesita (filtros,ordenaciones, agrupaciones.
+	\item Encapsulación 
+% Encapsula la lógica de los datos pudiendo hacer cambios queafectan a toda la aplicación únicamente modificando una función.
+	\item Portabilidad 
+% Permite cambiar en un proyecto el tipo de proveedor de unabase de datos MySQL a una Oracle sin ningún tipo de complicación.
+	\item Reutilización
+% Permite llamar a los métodos de un objeto de datos desdedistintas partes de la aplicación e incluso desde diferentes aplicaciones.
+	\item Seguridad
+% Permite proteger las aplicaciones de los ataques más comunescomo SQL Injections.
+	\item Mantenimiento del código
+% La correcta ordenación de la capa de datos permitemodificar y mantener el código
+
 \end{itemize}
 
-\subsubsection{\textbf{A2}}
+\subsubsection{\textbf{Desventajas}}
 
-EDITAR\\
+Algunas de las desventajas del ORM son: \cite{Borja2010} \cite{Polo2013} 
 
-\subsubsection{\textbf{A3}}
+\begin{itemize}
 
-EDITAR\\
+	\item Tiempo utilizado en el aprendizaje
+% Su curva de aprendizaje es amplia debido a la gran variedad de librerías queofrece ORM explorar la totalidad de su rendimiento costaría tiempo, sepuede usar en un proyecto de poca complejidad para un excelenterendimiento.
+% Este tipo de herramientas suelen ser complejas por lo que su correcta utilización lleva un tiempo que hay que emplear en ver el funcionamiento correcto y ver todo el partido que se le puede sacar.
+	\item Aplicaciones algo más lentas
+% Esto es debido a que todas las consultas que se hagan sobre la base de datos, el sistema primero deberá de transformarlas al lenguaje propio de la herramienta, luego leer los registros y por último crear los objetos.
+
+\end{itemize}
+
+\subsection{\textbf{ORMs en el mercado actual\\}}
+
+\begin{itemize}
+	
+	\item \textbf{Microsoft Entity Framework 6.0:} \\Microsoft Entity Framework se publicó por primera vez en 2008, como parte de .NET Framework 3.5 SP1 y Visual Studio 2008 SP1. A partir de la versión 4.1, se ha distribuido como paquete NuGet independiente convirtiéndose en uno de los más populares en NuGet.org. Sólo para plataforma Windows. Muy estable. Open Source. Proporciona servicios avanzados de modelado y seguimiento de estados de entidades, persistencia automática de cambios, caching, gestión de transacciones, etc.
+	
+	\item \textbf{Microsoft Entity Framework Core 2.0:} \\Nueva implementación de Entity Framework en versión Core. Más ligera, extensible y multiplataforma (Windows, Linux, Mac). Ofrece un rendimiento más potente en comparación con la versión desarrollada específicamente para .Net Framework. En continua evolución. Open Source. Puede ejecutarse sobre .Net Framework 4.6.1, .Net Core 2.0 o posteriores. 
+	
+	\item \textbf{Microsoft Entity Framework Core 2.1:} \\Versión más reciente de Entity Framework Core lanzada a finales de mayo de 2018. Incluye mejoras funcionales y de rendimiento, así como correcciones sobre la versión anterior. No obstante, no toda la funcionalidad de Entity Framework 6.0 ha sido migrada todavía a esta última versión de Entity Framework Core.
+	
+	\item \textbf{NHibernate:} \\Conversión de Hibernate en Java para lenguaje C\# compatible con plataforma .Net. Estable. Open Source.
+		
+	\item \textbf{Dapper:} \\Micro-ORM que proporciona métodos de extensión a las clases de .Net Framework para mapear resultados y persistir datos, previa inyección de código SQL personalizado. No nos libera pues de la implementación de nuestro código SQL, actuando como simple mapeador, pero a cambio ofrece un buen rendimiento. Es un ORM creado y usado en producción por el conocido portal web Stack Overflow. \cite{Deloitte1}
+
+\end{itemize}
+
+\subsection {\textbf{Modelo de datos basado en objetos\\}}
+El modelo de datos orientado a objetos se basa en el paradigma de los lenguajes de programación orientados a objetos, que actualmente se usa en gran medida. La herencia, la identidad de los objetos y la encapsulación , con métodos para ofrecer una interfaz para los objetos, están entre los conceptos principales de la programación orientada a objetos que han encontrado aplicación en el modelado de datos.
+
+El modelo orientado a objetos puede considerarse una extensión del modelo E-R con los conceptos de encapsulación, métodos (funciones) e identidad de los objetos. %%Falta referencia
+
 
 
 %% SEGUNDA SUBSECCION
 
-\subsection{\textbf{Bases de datos basadas en objetos}}
+\subsection{\textbf{Bases de datos basadas en objetos}} 
 El primer obstáculo al que se enfrentan los programadores que usan el modelo relacional de datos es el limitado sistema de tipos soportado por el modelo relacional. El segundo obstáculo es la dificultad de acceso a los datos de la base de datos desde los programas escritos en lenguajes de programación como C++ o Java. La mera extensión del sistema de tipos soportado por las bases de datos no resulta suficiente para resolver completamente este problema.
-El término lenguajes de programación persistentes hace referencia a las extensiones de los lenguajes de programación existentes que añaden persistencia y otras características de las bases de datos usando el sistema de tipos nativo del lenguaje de programación. El término sistemas de bases de datos orientadas a objetos se usa para hacer referencia a los sistemas de bases de datos que soportan sistemas de tipos orientados a objetos y permiten el acceso directo a los datos desde los lenguajes de programación orientados a objetos usando el sistema de tipos nativo del lenguaje.
+El término lenguajes de programación persistentes hace referencia a las extensiones de los lenguajes de programación existentes que añaden persistencia y otras características de las bases de datos usando el sistema de tipos nativo del lenguaje de programación. El término sistemas de bases de datos orientadas a objetos se usa para hacer referencia a los sistemas de bases de datos que soportan sistemas de tipos orientados a objetos y permiten el acceso directo a los datos desde los lenguajes de programación orientados a objetos usando el sistema de tipos nativo del lenguaje. %%Falta referencia
 
 
 \subsubsection{\textbf{Implementación de las características O-R}}
@@ -117,35 +180,15 @@ Los puntos fuertes de los diversos tipos de sistemas de bases de datos pueden re
 	\item Bases de datos orientadas a objetos basadas en lenguajes de programación persistentes: tipos de datos complejos, integración con los lenguajes de programación, elevado rendimiento.
 	\item Sistemas relacionales orientados a objetos: tipos de datos complejos, lenguajes de consultas potentes, protección elevada.
 \end{itemize}
-%% Ejemplo de inclusión de imagen
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=14cm]{./IMAGENES/basededatos_1} 
-		\caption{Incluyendo la base de datos en DevOps}
-	\end{center}
-\end{figure}
 
 \subsubsection{\textbf{B2}}
 
 EDITAR\\
 
-%% TERCERA SUBSECCION
-\subsection{\textbf{C}}
 
-\subsubsection{\textbf{C1}}
 
-EDITAR\\
 
-\begin{itemize}
 
-\item x
-\item y
-\item z
-
-\end{itemize}
-\subsubsection{\textbf{C2}}
-
-EDITAR\\
 
 
 %% ----------------------------------------------------------------------------------------------------------------------------------
