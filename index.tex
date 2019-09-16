@@ -221,14 +221,33 @@ Caracterísiticas:\\
 Los ORM proporcionan una abstraccion de alto nivel
 en una base de datos relacional que permite a un desarrollador escribir codigo Python en lugar de SQL para crear, leer, actualizar y eliminar datos y esquemas en su base de datos. Los desarrolladores pueden usar el lenguaje de programacion con el que se sienten comodos para trabajar con una base de datos en lugar de escribir sentencias de SQL o procedimientos almacenados.\\
 
-\subsection{\textbf{Análisis 2}}
-EDITAR\\
+\subsection{\textbf{Como ejemplo tenemos la herramienta Dapper}}
+Dapper es un simple mapeador de objetos para .NET y posee el título de King of Micro ORM en términos de velocidad y es virtualmente tan rápido como usar un lector de datos en bruto ADO.NET. Un ORM es un Asignador Relacional de Objetos, que es responsable de la asignación entre la base de datos y el lenguaje de programación.
+Dapper extiende la IDbConnection proporcionando métodos de extensión útiles para consultar su base de datos. \citep{DapperNet}
 
-\subsection{\textbf{Análisis 3}}
-EDITAR\\
+\subsection{\textbf{¿Como funciona?}}
+\begin{itemize}
+\item Crear un objeto IDbConnection.
+\item Escribe una consulta para realizar operaciones de CRUD.
+\item Pasar la consulta como un parámetro en el método de ejecución.
+\end{itemize}
 
-\subsection{\textbf{Análisis 4}}
-EDITAR\\
+\subsection{\textbf{Metodos}}
+\begin{itemize}
+\item Ejecutar
+\item Consulta
+\item QueryFirst
+\item QueryFirstOrDefault
+\item QuerySingle
+\item QuerySingleOrDefault
+\item QueryMultiple
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=14cm]{./Imagenes/Ejemplo}
+\end{center}
+\end{figure}
 
 %% ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -243,7 +262,12 @@ EDITAR\\
 de datos relacionales.Utilizar las diferentes herramientas de ORM, da mas rapidez y eficiencia a la construcción de base
 de datos.\\
 
-\item Conclusion 2 : \\ 
+\item Conclusion 2 : ORM es imprescindible para poder trabajar con base de datos relacionales y
+programación orientada a objetos, ya que es éste puede enlazar estas dos modalidades
+de trabajo. Se podrán crear todas las consultas de base de datos que se desean. Gracias a esto nos ayuda a poder hacer consultas
+sin la nesecidad de generar crear scripts en la base de datos, pero desde mi punto de vista los scripts son mas reusables que ORM.
+Recomendaria usar el ORM para sistemas pqueños o para consultas especificas.
+ 
 
 \item Conclusion 3 : \\ 
 
